@@ -1,0 +1,9 @@
+﻿<Application x:Class="Catalogos_BI_Fase_I.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MenuPrincipal.xaml">
+            <!--StartupUri="Gpo_Cuenta_Balance.xaml">-->
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

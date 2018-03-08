@@ -1,0 +1,554 @@
+﻿<Window x:Class="Catalogos_BI_Fase_I.ModificaInsertaCtaMay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Catalogos_BI_Fase_I.Validaciones" 
+        Title="Gpo_Cuenta_Balance" Height="850" Width="520">
+    <Grid>
+
+        <DockPanel LastChildFill="True" Margin="10"  >
+            <Ribbon x:Name="MainRibbon" TextOptions.TextFormattingMode="Display" VerticalAlignment="Top" 
+                   UseLayoutRounding="False" DockPanel.Dock="Top" Margin="1">
+
+                <!-- Ribbon Tab #1: Home -->
+                <RibbonTab Header="General" KeyTip="H" >
+                    <!-- Home  group-->
+                    <RibbonGroup x:Name="ClipboardGroup" Header="Básicos">
+                        <RibbonButton x:Name="rbAdicionar" Label="Guardar" LargeImageSource="Imagenes\adicionar.png"  KeyTip="a" Click="rbAdicionar_Click"  />
+                        <RibbonButton x:Name="rbLimpiar" Label="Limpiar" LargeImageSource="Imagenes\clean.png"  KeyTip="l" Click="rbLimpiar_Click" />
+                        <RibbonButton x:Name="rbCerrar" Label="Cerrar" LargeImageSource="Imagenes\close.png" KeyTip="c" Click="rbCerrar_Click" />
+                    </RibbonGroup>
+
+                </RibbonTab>
+
+            </Ribbon>
+            <Grid DockPanel.Dock="Top" VerticalAlignment="Top" Margin="0,5,0,0" HorizontalAlignment="Left" Width="470">
+
+                <TabControl Name="TabGeneral" Width="Auto" Height="Auto" VerticalAlignment="Top" Margin="5" >
+                    <TabItem Name="tabGpo_Cuenta_Balance" Header="DWD_Gpo_Cuenta_Balance" DataContext="gpo_Cuenta_Balance">
+
+                        <StackPanel Margin="10" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Content="gcta_id_1:" Target="{Binding ElementName=txt_gcta_id_1}" Margin="5"/>
+                                <TextBox Name="txt_gcta_id_1"  Margin="5" Grid.Column="1"  
+                                         ToolTip="{Binding gcta_id_1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                         MouseDoubleClick="txt_gcta_id_6_MouseDoubleClick" 
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="gcta_id_1" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_1:" Target="{Binding ElementName=txt_gcta_nombre_1}" Margin="5" Grid.Row="1" />
+                                <TextBox Name="txt_gcta_nombre_1"  Margin="5"  
+                                         ToolTip="{Binding gcta_nombre_1, Mode=TwoWay, 
+                                    UpdateSourceTrigger=PropertyChanged}"  Grid.Row="1" Grid.Column="1"
+                                         MouseDoubleClick="txt_gcta_id_6_MouseDoubleClick"
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="gcta_nombre_1" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_2:" Target="{Binding ElementName=txt_gcta_id_2}" Margin="5" Grid.Row="2" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_id_2" CharacterCasing="Upper"  
+                                         Margin="5"  ToolTip="{Binding gcta_id_2, 
+                                         Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="2" Grid.Column="1"
+                                         MouseDoubleClick="txt_gcta_id_6_MouseDoubleClick"
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="gcta_id_2" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                                <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_2:" Target="{Binding ElementName=txt_gcta_nombre_2}" Margin="5" Grid.Row="3" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_nombre_2" CharacterCasing="Upper" Margin="5"  Grid.Row="3" Grid.Column="1"
+                                         MouseDoubleClick="txt_gcta_id_6_MouseDoubleClick"
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="gcta_nombre_2" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_3:" Target="{Binding ElementName=txt_gcta_id_3}" Margin="5" Grid.Row="4"/>
+                                <TextBox Name="txt_gcta_id_3" CharacterCasing="Upper" Margin="5"  Grid.Row="4" Grid.Column="1"
+                                         MouseDoubleClick="txt_gcta_id_6_MouseDoubleClick"
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="gcta_id_3" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_3:" Target="{Binding ElementName=txt_gcta_nombre_3}" Margin="5" Grid.Row="5"/>
+                                <TextBox Name="txt_gcta_nombre_3" CharacterCasing="Upper" Margin="5"  Grid.Row="5" Grid.Column="1"
+                                         MouseDoubleClick="txt_gcta_id_6_MouseDoubleClick"
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="gcta_nombre_3" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_4:" Target="{Binding ElementName=txt_gcta_id_4}" Margin="5" Grid.Row="6"/>
+                                <TextBox Name="txt_gcta_id_4"  Margin="5"    Grid.Row="6" Grid.Column="1"
+                                         ToolTip="{Binding gcta_id_4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                         MouseDoubleClick="txt_gcta_id_6_MouseDoubleClick" 
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="gcta_id_4" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_4:" Target="{Binding ElementName=txt_gcta_nombre_4}" Margin="5" Grid.Row="7" />
+                                <TextBox Name="txt_gcta_nombre_4"  Margin="5"  
+                                         ToolTip="{Binding gcta_nombre_4, Mode=TwoWay, 
+                                    UpdateSourceTrigger=PropertyChanged}"  Grid.Row="7" Grid.Column="1"
+                                         MouseDoubleClick="txt_gcta_id_6_MouseDoubleClick"
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="gcta_nombre_4" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_5:" Target="{Binding ElementName=txt_gcta_id_5}" Margin="5" Grid.Row="8" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_id_5" CharacterCasing="Upper"
+                                         Margin="5"  ToolTip="{Binding gcta_id_5, 
+                                         Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="8" Grid.Column="1"
+                                         MouseDoubleClick="txt_gcta_id_6_MouseDoubleClick"
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="gcta_id_5" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                                <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_5:" Target="{Binding ElementName=txt_gcta_nombre_5}" Margin="5" Grid.Row="9" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_nombre_5" CharacterCasing="Upper" Margin="5" Grid.Row="9" Grid.Column="1"
+                                         MouseDoubleClick="txt_gcta_id_6_MouseDoubleClick"
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="gcta_nombre_5" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_6:" Target="{Binding ElementName=txt_gcta_id_6}" Margin="5" Grid.Row="10"/>
+                                <TextBox Name="txt_gcta_id_6"  Margin="5" Grid.Row="10" Grid.Column="1"  
+                                         ToolTip="{Binding gcta_id_6, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                         MouseDoubleClick="txt_gcta_id_6_MouseDoubleClick" 
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="gcta_id_6" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_6:" Target="{Binding ElementName=txt_gcta_nombre_6}" Margin="5" Grid.Row="11" />
+                                <TextBox Name="txt_gcta_nombre_6"  Margin="5"
+                                         MouseDoubleClick="txt_gcta_id_6_MouseDoubleClick"
+                                         ToolTip="{Binding gcta_nombre_6, Mode=TwoWay, 
+                                    UpdateSourceTrigger=PropertyChanged}"  Grid.Row="11" Grid.Column="1"
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="gcta_nombre_6" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_7:" Target="{Binding ElementName=txt_gcta_id_7}" Margin="5" Grid.Row="12" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_id_7" CharacterCasing="Upper" 
+                                         Margin="5"  ToolTip="{Binding gcta_id_7, 
+                                         Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="12" Grid.Column="1"
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="gcta_id_7" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_7:" Target="{Binding ElementName=txt_gcta_nombre_7}" Margin="5" Grid.Row="13" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_nombre_7" CharacterCasing="Upper" Margin="5" Grid.Row="13" Grid.Column="1"
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="gcta_nombre_7" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="In_cat_utilidad:" Target="{Binding ElementName=txt_In_cat_utilidad}" Margin="5" Grid.Row="14"/>
+                                <TextBox Name="txt_In_cat_utilidad" CharacterCasing="Upper" Margin="5" Grid.Row="14" Grid.Column="1"
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="In_cat_utilidad" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="Ident_Migra_Pasivo:" Target="{Binding ElementName=txt_Ident_Migra_Pasivo}" Margin="5" Grid.Row="15"/>
+                                <TextBox Name="txt_Ident_Migra_Pasivo" CharacterCasing="Upper" Margin="5" Grid.Row="15" Grid.Column="1"
+                                         Height="20" MaxLength="255">
+                                    <Binding Path="Ident_Migra_Pasivo" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                            </Grid>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Name="tabGpo_Cuenta_EdoRes_Trad" Header="DWD_Gpo_Cuenta_EdoResultados_Tradicional" DataContext="gpo_Cuenta_EdoRes_Trad">
+                        <StackPanel Margin="10" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Content="gcta_id_1:" Target="{Binding ElementName=txt_gcta_ERT_id_1}" Margin="5"/>
+                                <TextBox Name="txt_gcta_ERT_id_1"  Margin="5" Grid.Column="1"  
+                                         ToolTip="{Binding gcta_id_1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                         Height="20" MaxLength="12" MouseDoubleClick="txt_gcta_ERT_id_1_MouseDoubleClick" >
+                                    <Binding Path="gcta_id_1" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_1:" Target="{Binding ElementName=txt_gcta_ERT_nombre_1}" Margin="5" Grid.Row="1" />
+                                <TextBox Name="txt_gcta_ERT_nombre_1"  Margin="5"  
+                                         ToolTip="{Binding gcta_nombre_1, Mode=TwoWay, 
+                                    UpdateSourceTrigger=PropertyChanged}"  Grid.Row="1" Grid.Column="1"
+                                         Height="20" MaxLength="60" MouseDoubleClick="txt_gcta_ERT_id_1_MouseDoubleClick" >
+                                    <Binding Path="gcta_nombre_1" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_2:" Target="{Binding ElementName=txt_gcta_ERT_id_2}" Margin="5" Grid.Row="2" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_ERT_id_2" CharacterCasing="Upper" 
+                                         Margin="5"  ToolTip="{Binding gcta_id_2, 
+                                         Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="2" Grid.Column="1"
+                                         Height="20" MaxLength="12" MouseDoubleClick="txt_gcta_ERT_id_1_MouseDoubleClick" > 
+                                    <Binding Path="gcta_id_2" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_2:" Target="{Binding ElementName=txt_gcta_ERT_nombre_2}" Margin="5" Grid.Row="3" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_ERT_nombre_2" CharacterCasing="Upper" Margin="5"  Grid.Row="3" Grid.Column="1"
+                                         Height="20" MaxLength="60" MouseDoubleClick="txt_gcta_ERT_id_1_MouseDoubleClick" >
+                                    <Binding Path="gcta_nombre_2" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_3:" Target="{Binding ElementName=txt_gcta_ERT_id_3}" Margin="5" Grid.Row="4"/>
+                                <TextBox Name="txt_gcta_ERT_id_3" CharacterCasing="Upper" Margin="5"  Grid.Row="4" Grid.Column="1"
+                                         Height="20" MaxLength="12" MouseDoubleClick="txt_gcta_ERT_id_1_MouseDoubleClick" >
+                                    <Binding Path="gcta_id_3" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_3:" Target="{Binding ElementName=txt_gcta_ERT_nombre_3}" Margin="5" Grid.Row="5"/>
+                                <TextBox Name="txt_gcta_ERT_nombre_3" CharacterCasing="Upper" Margin="5"  Grid.Row="5" Grid.Column="1"
+                                         Height="20" MaxLength="60" MouseDoubleClick="txt_gcta_ERT_id_1_MouseDoubleClick" >
+                                    <Binding Path="gcta_nombre_3" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_4:" Target="{Binding ElementName=txt_gcta_ERT_id_4}" Margin="5" Grid.Row="6"/>
+                                <TextBox Name="txt_gcta_ERT_id_4"  Margin="5"    Grid.Row="6" Grid.Column="1"
+                                         ToolTip="{Binding gcta_id_4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                         Height="20" MaxLength="12" MouseDoubleClick="txt_gcta_ERT_id_1_MouseDoubleClick" >
+                                    <Binding Path="gcta_id_4" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_4:" Target="{Binding ElementName=txt_gcta_ERT_nombre_4}" Margin="5" Grid.Row="7" />
+                                <TextBox Name="txt_gcta_ERT_nombre_4"  Margin="5"  
+                                         ToolTip="{Binding gcta_nombre_4, Mode=TwoWay, 
+                                    UpdateSourceTrigger=PropertyChanged}"  Grid.Row="7" Grid.Column="1"
+                                         Height="20" MaxLength="60" MouseDoubleClick="txt_gcta_ERT_id_1_MouseDoubleClick" >
+                                    <Binding Path="gcta_nombre_4" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_5:" Target="{Binding ElementName=txt_gcta_ERT_id_5}" Margin="5" Grid.Row="8" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_ERT_id_5" CharacterCasing="Upper"  
+                                         Margin="5"  ToolTip="{Binding gcta_id_5, 
+                                         Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="8" Grid.Column="1"
+                                         Height="20" MaxLength="12" MouseDoubleClick="txt_gcta_ERT_id_1_MouseDoubleClick" >
+                                    <Binding Path="gcta_id_5" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_5:" Target="{Binding ElementName=txt_gcta_ERT_nombre_5}" Margin="5" Grid.Row="9" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_ERT_nombre_5" CharacterCasing="Upper" Margin="5" Grid.Row="9" Grid.Column="1"
+                                         Height="20" MaxLength="60" MouseDoubleClick="txt_gcta_ERT_id_1_MouseDoubleClick" >
+                                    <Binding Path="gcta_nombre_5" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_6:" Target="{Binding ElementName=txt_gcta_ERT_id_6}" Margin="5" Grid.Row="10"/>
+                                <TextBox Name="txt_gcta_ERT_id_6"  Margin="5" Grid.Row="10" Grid.Column="1"  
+                                         ToolTip="{Binding gcta_id_6, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                         Height="20" MaxLength="12" MouseDoubleClick="txt_gcta_ERT_id_1_MouseDoubleClick" >
+                                    <Binding Path="gcta_id_6" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_6:" Target="{Binding ElementName=txt_gcta_ERT_nombre_6}" Margin="5" Grid.Row="11" />
+                                <TextBox Name="txt_gcta_ERT_nombre_6"  Margin="5"  
+                                         ToolTip="{Binding gcta_nombre_6, Mode=TwoWay, 
+                                    UpdateSourceTrigger=PropertyChanged}"  Grid.Row="11" Grid.Column="1"
+                                         Height="20" MaxLength="60" MouseDoubleClick="txt_gcta_ERT_id_1_MouseDoubleClick" >
+                                    <Binding Path="gcta_nombre_6" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_9:" Target="{Binding ElementName=txt_gcta_ERT_id_9}" Margin="5" Grid.Row="12" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_ERT_id_9" CharacterCasing="Upper"  
+                                         Margin="5"  ToolTip="{Binding gcta_id_9, 
+                                         Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="12" Grid.Column="1"
+                                         Height="20" MaxLength="20" MouseDoubleClick="txt_gcta_ERT_id_1_MouseDoubleClick" >
+                                    <Binding Path="gcta_id_9" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_9:" Target="{Binding ElementName=txt_gcta_ERT_nombre_9}" Margin="5" Grid.Row="13" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_ERT_nombre_9" CharacterCasing="Upper" Margin="5" Grid.Row="13" Grid.Column="1"
+                                         Height="20" MaxLength="60" MouseDoubleClick="txt_gcta_ERT_id_1_MouseDoubleClick" >
+                                    <Binding Path="gcta_nombre_9" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                
+                            </Grid>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Name="tabGpo_Cuenta_Bal_Ope" Header="DWD_Gpo_Cuenta_Balance_Operadora" DataContext="gpo_Cuenta_Bal_Ope">
+                        <StackPanel Margin="10" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Content="gcta_id_1:" Target="{Binding ElementName=txt_gcta_BO_id_1}" Margin="5"/>
+                                <TextBox Name="txt_gcta_BO_id_1"  Margin="5" Grid.Column="1"  
+                                         ToolTip="{Binding gcta_id_1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                         Height="20" MaxLength="12" MouseDoubleClick="txt_gcta_BO_id_1_MouseDoubleClick" >
+                                    <Binding Path="gcta_id_1" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_1:" Target="{Binding ElementName=txt_gcta_BO_nombre_1}" Margin="5" Grid.Row="1" />
+                                <TextBox Name="txt_gcta_BO_nombre_1"  Margin="5"  
+                                         ToolTip="{Binding gcta_nombre_1, Mode=TwoWay, 
+                                    UpdateSourceTrigger=PropertyChanged}"  Grid.Row="1" Grid.Column="1"
+                                         Height="20" MaxLength="60">
+                                    <Binding Path="gcta_nombre_1" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_2:" Target="{Binding ElementName=txt_gcta_BO_id_2}" Margin="5" Grid.Row="2" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_BO_id_2" CharacterCasing="Upper" 
+                                         Margin="5"  ToolTip="{Binding gcta_id_2, 
+                                         Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="2" Grid.Column="1"
+                                         Height="20" MaxLength="12">
+                                    <Binding Path="gcta_id_2" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_2:" Target="{Binding ElementName=txt_gcta_BO_nombre_2}" Margin="5" Grid.Row="3" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_BO_nombre_2" CharacterCasing="Upper" Margin="5"  Grid.Row="3" Grid.Column="1"
+                                         Height="20" MaxLength="60">
+                                    <Binding Path="gcta_nombre_2" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_3:" Target="{Binding ElementName=txt_gcta_BO_id_3}" Margin="5" Grid.Row="4"/>
+                                <TextBox Name="txt_gcta_BO_id_3" CharacterCasing="Upper" Margin="5"  Grid.Row="4" Grid.Column="1"
+                                         Height="20" MaxLength="12">
+                                    <Binding Path="gcta_id_3" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_3:" Target="{Binding ElementName=txt_gcta_BO_nombre_3}" Margin="5" Grid.Row="5"/>
+                                <TextBox Name="txt_gcta_BO_nombre_3" CharacterCasing="Upper" Margin="5"  Grid.Row="5" Grid.Column="1"
+                                         Height="20" MaxLength="60">
+                                    <Binding Path="gcta_nombre_3" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_4:" Target="{Binding ElementName=txt_gcta_BO_id_4}" Margin="5" Grid.Row="6"/>
+                                <TextBox Name="txt_gcta_BO_id_4"  Margin="5"    Grid.Row="6" Grid.Column="1"
+                                         ToolTip="{Binding gcta_id_4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                         Height="20" MaxLength="12">
+                                    <Binding Path="gcta_id_4" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_4:" Target="{Binding ElementName=txt_gcta_BO_nombre_4}" Margin="5" Grid.Row="7" />
+                                <TextBox Name="txt_gcta_BO_nombre_4"  Margin="5"  
+                                         ToolTip="{Binding gcta_nombre_4, Mode=TwoWay, 
+                                    UpdateSourceTrigger=PropertyChanged}"  Grid.Row="7" Grid.Column="1"
+                                         Height="20" MaxLength="60">
+                                    <Binding Path="gcta_nombre_4" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_5:" Target="{Binding ElementName=txt_gcta_BO_id_5}" Margin="5" Grid.Row="8" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_BO_id_5" CharacterCasing="Upper"  
+                                         Margin="5"  ToolTip="{Binding gcta_id_5, 
+                                         Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="8" Grid.Column="1"
+                                         Height="20" MaxLength="12">
+                                    <Binding Path="gcta_id_5" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_5:" Target="{Binding ElementName=txt_gcta_BO_nombre_5}" Margin="5" Grid.Row="9" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_BO_nombre_5" CharacterCasing="Upper" Margin="5" Grid.Row="9" Grid.Column="1"
+                                         Height="20" MaxLength="60">
+                                    <Binding Path="gcta_nombre_5" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_8:" Target="{Binding ElementName=txt_gcta_BO_id_8}" Margin="5" Grid.Row="12" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_BO_id_8" CharacterCasing="Upper"  
+                                         Margin="5"  ToolTip="{Binding gcta_id_8, 
+                                         Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="12" Grid.Column="1"
+                                         Height="20" MaxLength="12">
+                                    <Binding Path="gcta_id_8" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_nombre_8:" Target="{Binding ElementName=txt_gcta_BO_nombre_8}" Margin="5" Grid.Row="13" Grid.Column="0"/>
+                                <TextBox Name="txt_gcta_BO_nombre_8" CharacterCasing="Upper" Margin="5" Grid.Row="13" Grid.Column="1"
+                                         Height="20" MaxLength="60">
+                                    <Binding Path="gcta_nombre_8" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+
+                            </Grid>
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+
+            </Grid>
+        </DockPanel>
+
+
+
+    </Grid>
+</Window>

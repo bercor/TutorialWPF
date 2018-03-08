@@ -1,0 +1,144 @@
+﻿<Window x:Class="Catalogos_BI_Fase_I.MenuPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:filter="clr-namespace:DataGridFilterLibrary;assembly=DataGridFilterLibrary" 
+        Title="Catalogos generales" Height="Auto" Width="AUTO" >
+
+    <StackPanel Margin="0,0,2,0" RenderTransformOrigin="0.466,0.492" >
+
+        <Ribbon x:Name="mainRibbon" >
+            <RibbonTab Header="Mantenimientos">
+                <RibbonGroup x:Name="Group1" Header="Acciones">
+                    <RibbonButton Name="rbNuevo" Label="Nuevo" LargeImageSource="/Imagenes/nuevo.png" Click="rbNuevo_Click"  />
+                    <!--<RibbonButton Name="rbGuardar" Label="Guardar" LargeImageSource="/Imagenes/adicionar.png" Click="rbGuardar_Click"/>-->
+                    <RibbonButton Name="rbEliminar" Label="Eliminar" LargeImageSource="/Imagenes/delete.png" Click="rbEliminar_Click"/>
+                </RibbonGroup>
+                <RibbonGroup x:Name="Generales" Header="Generales">
+                    <RibbonButton Name="rbSalir" Label="Salir" LargeImageSource="/Imagenes/exit.png" Click="rbSalir_Click" />
+                </RibbonGroup>
+            </RibbonTab>
+            
+
+            <RibbonTab Header="Reportes">
+                <RibbonGroup x:Name="Group2" Header="Lista de Reportes">
+                    <RibbonButton Label="Imprimir" LargeImageSource="/Imagenes/printer.png"/>
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="192" />
+                <RowDefinition  Height="*" />
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" HorizontalAlignment="Left" Height="192" VerticalAlignment="Top">
+                <Expander Background="LightSteelBlue"  x:Name="Expander1" Header="Contabilidad" Margin="0,0,6,0" RenderTransformOrigin="0.5,0.5">
+
+                    <Expander.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="359.821"/>
+                            <TranslateTransform X="-0.072"/>
+                        </TransformGroup>
+                    </Expander.RenderTransform>
+                    <ListBox Name="listBContabilidad" Background="AliceBlue" SelectionChanged="listBContabilidad_SelectionChanged" >
+                        <ListBoxItem >
+                            <TextBlock><Run Text="DWD_Criterio_EdoResultados_41501"/></TextBlock>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <TextBlock><Run Text="DWD_Criterio_EdoResultados_Especial"/></TextBlock>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <TextBlock><Run Text="DWD_Emp_Reporte_Utilidades"/></TextBlock>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <TextBlock><Run Text="d_acreedor_operadora"/></TextBlock>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <TextBlock><Run Text="d_deudor_operadora"/></TextBlock>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <TextBlock><Run Text="DWD_Gpo_Cuenta_Balance"/></TextBlock>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <TextBlock><Run Text="DWD_Gpo_Cuenta_EdoResultados_Tradicional"/></TextBlock>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <TextBlock><Run Text="DWD_Gpo_Cuenta_Balance_Operadora"/></TextBlock>
+                        </ListBoxItem>
+                    </ListBox>
+
+                </Expander>
+
+                <Expander Background="LightSteelBlue" x:Name="Expander3" Header="Segunda etapa" Margin="0,0,6,0" RenderTransformOrigin="0.5,0.5">
+                    <Expander.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="359.821"/>
+                            <TranslateTransform X="0.072"/>
+                        </TransformGroup>
+                    </Expander.RenderTransform>
+                    <ListBox Background="AliceBlue" x:Name="listbox2">
+                        <ListBoxItem>
+                            <TextBlock><Run Text="SEG1"/></TextBlock>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <TextBlock><Run Text="SEG2"/></TextBlock>
+                        </ListBoxItem>
+                    </ListBox>
+                </Expander>
+                <Expander Background="LightSteelBlue" x:Name="Expander2" Header="Tercera etapa  " Margin="0,0,6,0" RenderTransformOrigin="0.5,0.5">
+                    <Expander.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="359.821"/>
+                            <TranslateTransform X="0.072"/>
+                        </TransformGroup>
+                    </Expander.RenderTransform>
+                    <ListBox Background="AliceBlue" x:Name="listbox3">
+                        <ListBoxItem>
+                            <TextBlock><Run Text="TER1"/></TextBlock>
+                        </ListBoxItem>
+                        <ListBoxItem Height="20">
+                            <TextBlock><Run Text="Ter2"/></TextBlock>
+                        </ListBoxItem>
+                    </ListBox>
+                </Expander>
+            </StackPanel>
+            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
+            <DataGrid Grid.Column="2" Grid.RowSpan="2" Name="grd_General" HorizontalAlignment="Left"  VerticalAlignment="Stretch" 
+                                          AutoGenerateColumns="True" CanUserReorderColumns="False" CanUserSortColumns="False" Margin=" 10" 
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                          Height="700" Width="Auto" SelectionMode="Single" Visibility="Hidden" MouseDoubleClick="grd_General_MouseDoubleClick"  >
+                <DataGrid.Columns>
+                    <!--<DataGridTextColumn 
+                        
+                        HeaderStyle="{StaticResource {ComponentResourceKey TypeInTargetAssembly={x:Type filter:DataGridHeaderFilterControl}, ResourceId=DataGridHeaderFilterControlStyle}}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="Margin" Value="4,0,4,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>-->
+                    
+                    <!--<DataGridTextColumn Header="Usuario_ID" IsReadOnly="True" Binding="{Binding Usuario_ID}" Width="1*" />
+                    <DataGridTextColumn Header="gcta_id_8" IsReadOnly="True" Binding="{Binding gcta_id_8}" Width="1*" />
+                    <DataGridTextColumn Header="Rubro" IsReadOnly="True" Binding="{Binding Rubro}" Width="1*" />-->
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+        
+        
+
+    </StackPanel>
+
+</Window>

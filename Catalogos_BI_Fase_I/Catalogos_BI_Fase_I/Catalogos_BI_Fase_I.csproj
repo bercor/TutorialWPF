@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FDBEA97-AD82-4427-87FF-D4057E4D88B3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Catalogos_BI_Fase_I</RootNamespace>
+    <AssemblyName>Catalogos_BI_Fase_I</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClaseEntorno, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>I:\-.NET\dlls\ClaseEntorno.dll</HintPath>
+    </Reference>
+    <Reference Include="DataGridFilterLibrary">
+      <HintPath>I:\-.NET\dlls\DataGridFilterLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.WpfRibbon">
+      <HintPath>I:\-.NET\dlls\DevComponents.WpfRibbon.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Com_BD\ConsultaSQLCatMay.cs" />
+    <Compile Include="Cuenta.xaml.cs">
+      <DependentUpon>Cuenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModificaInsertaCtaMay.xaml.cs">
+      <DependentUpon>ModificaInsertaCtaMay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModificaInserta.xaml.cs">
+      <DependentUpon>ModificaInserta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal.xaml.cs">
+      <DependentUpon>MenuPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaModifica41501.xaml.cs">
+      <DependentUpon>NuevaModifica41501.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ObjetosBD\Cuentas.cs" />
+    <Compile Include="ObjetosBD\DWD_Criterio_EdoResultados_Especial.cs" />
+    <Compile Include="ObjetosBD\DWD_Emp_Reporte_Utilidades.cs" />
+    <Compile Include="ObjetosBD\DWD_Gpo_Cuenta_Balance.cs" />
+    <Compile Include="ObjetosBD\DWD_Gpo_Cuenta_Balance_Operadora.cs" />
+    <Compile Include="ObjetosBD\DWD_Gpo_Cuenta_EdoResultados_Tradicional.cs" />
+    <Compile Include="ObjetosBD\d_acreedor_operadora.cs" />
+    <Compile Include="ObjetosBD\d_Deudor_Acredor_operadora.cs" />
+    <Compile Include="Validaciones\ObjetoErrorValidacion.cs" />
+    <Compile Include="Validaciones\ValidacionesComunes.cs" />
+    <Page Include="Cuenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Estilos\EstilosEspecificos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModificaInsertaCtaMay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModificaInserta.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Conexion\ClsFuncionesGlobales.cs" />
+    <Compile Include="Com_BD\ConsultaSQL.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MenuPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NuevaModifica41501.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ObjetosBD\Cls_DWD_Criterio_EdoResultados_41501.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\eliminar.png" />
+    <Resource Include="Imagenes\adicionar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\delete.png" />
+    <Resource Include="Imagenes\exit.png" />
+    <Resource Include="Imagenes\Nuevo.png" />
+    <Resource Include="Imagenes\ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\close.png" />
+    <Resource Include="Imagenes\printer.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

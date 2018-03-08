@@ -1,0 +1,246 @@
+﻿<Window x:Class="Catalogos_BI_Fase_I.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Catalogos_BI_Fase_I.Validaciones" 
+        Title="MainWindow" Height="800" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*">
+            </RowDefinition>
+            <RowDefinition Height="100*">
+            </RowDefinition>
+            <RowDefinition Height="550*">
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <DockPanel LastChildFill="True" Margin="-10,0,10,10" Grid.RowSpan="3" >
+            <Ribbon x:Name="MainRibbon" TextOptions.TextFormattingMode="Display" VerticalAlignment="Top" 
+                   UseLayoutRounding="False" DockPanel.Dock="Top" Margin="10,0,-10,0">
+
+                <!-- Ribbon Tab #1: Home -->
+                <RibbonTab Header="General" KeyTip="H" >
+                    <!-- Home  group-->
+                    <RibbonGroup x:Name="ClipboardGroup" Header="Básicos">
+                        <RibbonButton x:Name="rbAdicionar" Label="Adicionar" LargeImageSource="Imagenes\adicionar.png"  KeyTip="a" Click="rbAdicionar_Click"  />
+                        <RibbonButton x:Name="rbEliminar" Label="Eliminar" LargeImageSource="Imagenes\eliminar.png"  KeyTip="e" Click="rbEliminar_Click" />
+                        <RibbonButton x:Name="rbCerrar" Label="Cerrar" LargeImageSource="Imagenes\cerrar.png" KeyTip="c" />
+                    </RibbonGroup>
+                    <!-- Employee And Payroll group-->
+                    <!--<RibbonGroup x:Name="catComplejos" Header="Complejos">
+                        <RibbonMenuButton  Label="Catálogo 4" KeyTip="4">
+                        </RibbonMenuButton>
+                        <RibbonButton  Label="Catálogo 5" KeyTip="5" />
+                        <RibbonButton  Label="Catálogo 6" KeyTip="6" />
+                    </RibbonGroup>-->
+                </RibbonTab>
+
+            </Ribbon>
+            <Grid Height="600" VerticalAlignment="Top" Width="650" Margin="0,5,0,0">
+                <Grid HorizontalAlignment="Left" Height="590" Margin="10,15,-24,0" VerticalAlignment="Top" Width="620">
+                    <TabControl Name="tabControl" Height="570" VerticalAlignment="Top" Margin="5,10,10,0" >
+                        <TabItem Header="Criterio_EdoResultados_41501">
+                            <StackPanel Margin="10,10,2,10">
+                                <Label Content="Id_8_ini:" Target="{Binding ElementName=txt_gcta_id_8_ini}" Margin="10"/>
+                                <TextBox Name="txt_gcta_id_8_ini" MaxLength="16" Margin="10, 0, 10, 0"  ToolTip="{Binding Id_8_ini, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                                    <Binding Path="gcta_id_8_ini" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="Id_9_fin:" Target="{Binding ElementName=txt_gcta_id_9_fin}" Margin="10"/>
+                                <TextBox Name="txt_gcta_id_9_fin" Margin="10, 0, 10, 0" MaxLength="16">
+                                    <Binding Path="gcta_id_9_fin" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="_Signo_importe:" Target="{Binding ElementName=cmbSigno_importe}" Margin="10"/>
+                                <ComboBox Name="cmbSigno_importe" Margin="10, 0, 10, 0">
+                                    <ComboBoxItem >Negativo</ComboBoxItem>
+                                    <ComboBoxItem  IsSelected="True">Positivo</ComboBoxItem>
+                                </ComboBox>
+                                <Label Content="_Rubro_5_Afecta:" Target="{Binding ElementName=txt_Rubro_5_Afecta}" Margin="10"/>
+                                <TextBox Name="txt_Rubro_5_Afecta" Margin="10, 0, 10, 10" MaxLength="16">
+                                    <Binding Path="Rubro_5_Afecta" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+
+                                <DataGrid Name="grd_EdoResultados_41501" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" 
+                                          AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" Margin=" 10" 
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                          Height="200" SelectionMode="Single">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Id_8_ini" IsReadOnly="True" Binding="{Binding gcta_id_8_ini}" Width="1*" />
+                                        <DataGridTextColumn Header="Id_9_fin" IsReadOnly="True" Binding="{Binding gcta_id_9_fin}" Width="1*" />
+                                        <DataGridTextColumn Header="Signo_importe" IsReadOnly="True" Binding="{Binding Signo_importe}" Width="1*" />
+                                        <DataGridTextColumn Header="Rubro_5_Afecta" IsReadOnly="True" Binding="{Binding Rubro_5_Afecta}" Width="1*" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem Header="DWD_Criterio_EdoResultados_Especial">
+                            <StackPanel Margin="10,10,2,10" >
+                                <Label Content="_Rubro_01:" Target="{Binding ElementName=txt_Rubro_01}" Margin="10"/>
+                                <TextBox Name="txt_Rubro_01" MaxLength="12" Margin="10, 0, 10, 0"  ToolTip="{Binding Rubro_01, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                                    <Binding Path="Rubro_01" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="_Rubro_03:" Target="{Binding ElementName=txt_Rubro_03}" Margin="10"/>
+                                <TextBox Name="txt_Rubro_03" Margin="10, 0, 10, 0" MaxLength="12">
+                                    <Binding Path="Rubro_03" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="_Contrato:" Target="{Binding ElementName=txt_Contrato}" Margin="10"/>
+                                <TextBox Name="txt_Contrato" Margin="10, 0, 10, 0" MaxLength="12">
+                                    <Binding Path="Contrato" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_8_fin:" Target="{Binding ElementName=txt_gcta_id_8_fin}" Margin="10"/>
+                                <TextBox Name="txt_gcta_id_8_fin" Margin="10, 0, 10, 10" MaxLength="16">
+                                    <Binding Path="gcta_id_8_fin" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="gcta_id_8_ini:" Target="{Binding ElementName=txt_gcta_id_8_iniEsp}" Margin="10"/>
+                                <TextBox Name="txt_gcta_id_8_iniEsp" Margin="10, 0, 10, 10" MaxLength="16">
+                                    <Binding Path="gcta_id_8_ini" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+
+                                <DataGrid Name="grd_EdoResultados_Especial" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" 
+                                          AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" Margin=" 10" 
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                          Height="140" SelectionMode="Single">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Rubro_01" IsReadOnly="True" Binding="{Binding Rubro_01}" Width="1*" />
+                                        <DataGridTextColumn Header="Rubro_03" IsReadOnly="True" Binding="{Binding Rubro_03}" Width="1*" />
+                                        <DataGridTextColumn Header="Contrato" IsReadOnly="True" Binding="{Binding Contrato}" Width="1*" />
+                                        <DataGridTextColumn Header="gcta_id_8_fin" IsReadOnly="True" Binding="{Binding gcta_id_8_fin}" Width="1*" />
+                                        <DataGridTextColumn Header="gcta_id_8_ini" IsReadOnly="True" Binding="{Binding gcta_id_8_ini}" Width="1*" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem Header="DWD_Emp_Reporte_Utilidades">
+                            <StackPanel Margin="10,10,2,10" >
+                                <Label Content="_Usuario_ID:" Target="{Binding ElementName=txt_Usuario_ID}" Margin="10"/>
+                                <TextBox Name="txt_Usuario_ID" MaxLength="6" Margin="10, 0, 10, 0"  ToolTip="{Binding Usuario_ID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                                    <Binding Path="Usuario_ID" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="_gcta_id_8:" Target="{Binding ElementName=txt_gcta_id_8}" Margin="10"/>
+                                <TextBox Name="txt_gcta_id_8" Margin="10, 0, 10, 0" MaxLength="16">
+                                    <Binding Path="gcta_id_8" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="_Rubro:" Target="{Binding ElementName=txt_Rubro}" Margin="10"/>
+                                <TextBox Name="txt_Rubro" Margin="10, 0, 10, 0" MaxLength="6">
+                                    <Binding Path="Rubro" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+
+
+                                <DataGrid Name="grd_Reporte_Utilidades" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" 
+                                          AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" Margin=" 10" 
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                          Height="140" SelectionMode="Single" >
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Usuario_ID" IsReadOnly="True" Binding="{Binding Usuario_ID}" Width="1*" />
+                                        <DataGridTextColumn Header="gcta_id_8" IsReadOnly="True" Binding="{Binding gcta_id_8}" Width="1*" />
+                                        <DataGridTextColumn Header="Rubro" IsReadOnly="True" Binding="{Binding Rubro}" Width="1*" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem Header="Operadora">
+                            <StackPanel Margin="10,10,2,10" >
+                                <StackPanel RenderTransformOrigin="0.5,0.5" Margin="10,10,0,0" >
+                                    <RadioButton Name="OpeAcree" GroupName="operadora" Checked="OpeAcree_Checked">d__acreedor__operadora</RadioButton>
+                                    <RadioButton Name="OpeDeu" GroupName="operadora"  Checked="OpeDeu_Checked">d__deudor__operadora</RadioButton>
+                                </StackPanel>
+
+                                <Label Content="_Aux_auxiliar:" Target="{Binding ElementName=txt_aux_auxiliar}" Margin="10"/>
+                                <TextBox Name="txt_aux_auxiliar" MaxLength="12" Margin="10, 0, 10, 0" ToolTip="{Binding Usuario_ID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                                    <Binding Path="aux_auxiliar" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="Aux__desc:" Target="{Binding ElementName=txt_aux_desc}" Margin="10"/>
+                                <TextBox Name="txt_aux_desc" Margin="10, 0, 10, 0" MaxLength="50">
+                                    <Binding Path="aux_desc" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules> 
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="Aux__estado:" Target="{Binding ElementName=txt_aux_estado}" Margin="10"/>
+                                <TextBox Name="txt_aux_estado" Margin="10, 0, 10, 0" MaxLength="1">
+                                    <Binding Path="aux_estado" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <Label Content="Aux__desc__2:" Target="{Binding ElementName=txt_aux_desc_2}" Margin="10"/>
+                                <TextBox Name="txt_aux_desc_2" Margin="10, 0, 10, 0" MaxLength="60">
+                                    <Binding Path="aux_desc_2" NotifyOnValidationError="True" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"  >
+                                        <Binding.ValidationRules>
+                                            <local:ValidaCampoEnBlanco />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+
+
+                                <DataGrid Name="grd_Acredor_Deudor" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" 
+                                          AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" Margin=" 10" 
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                          Height="140" SelectionMode="Single">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Aux__auxiliar" IsReadOnly="True" Binding="{Binding aux_auxiliar}" Width="1*" />
+                                        <DataGridTextColumn Header="Aux__desc" IsReadOnly="True" Binding="{Binding aux_desc}" Width="1*" />
+                                        <DataGridTextColumn Header="Aux__estado" IsReadOnly="True" Binding="{Binding aux_estado}" Width="1*" />
+                                        <DataGridTextColumn Header="Aux__desc_2" IsReadOnly="True" Binding="{Binding aux_desc_2}" Width="1*" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </StackPanel>
+                        </TabItem>
+
+
+                    </TabControl>
+                </Grid>
+            </Grid>
+        </DockPanel>
+
+
+
+    </Grid>
+</Window>

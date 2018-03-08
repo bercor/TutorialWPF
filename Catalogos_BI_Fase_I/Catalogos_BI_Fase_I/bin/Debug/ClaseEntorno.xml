@@ -1,0 +1,220 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ClaseEntorno
+</name>
+</assembly>
+<members>
+<member name="M:Seguridad.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Seguridad">
+	<summary>
+Seguridad
+</summary>
+</member><member name="M:Entorno.#ctor">
+	<summary>
+ Constructor de la clase Entorno
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Entorno.#ctor(System.Windows.StartupEventArgs)">
+	<summary>
+ Constructor de la clase Entorno con parametros
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Entorno.LeeIni(System.String,System.String,System.String,System.String)">
+	<summary>
+ Función para lectura de cada linea del archivo de configuración
+ </summary>
+	<param name="Seccion">Seccion a  buscar</param>
+	<param name="Entrada">Entrada a leer</param>
+	<param name="DefVal">Valor por default</param>
+	<param name="Archivos">Ruta y nombre del archivo a leer</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Entorno.LeeDatosFechas">
+	<summary>
+ Función para tomar los datos de Fechas para el Entorno
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Entorno.ConectaBaseDatos(System.Data.SqlClient.SqlConnection@,System.String)">
+	<summary>
+ Función de Conexión a Base de Datos
+ </summary>
+	<param name="Conexion"></param>
+	<param name="NombreApp"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Entorno.ConectaBaseDatos(System.Data.SqlClient.SqlConnection@,System.String,System.Int32)">
+	<summary>
+ Función de Conexión a Base de Datos
+ </summary>
+	<param name="Conexion"></param>
+	<param name="NombreApp"></param>
+	<param name="Timeout"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Entorno.ConectaBaseDatos(System.String,System.String,System.String,System.String,System.String,System.Int32)">
+	<summary>
+ Esta es una version mas generica de crear la conexion de base de datos, para poder abrir cualquier base de datos en caso de 
+ ser necesario
+ </summary>
+	<param name="StrServer"></param>
+	<param name="StrBaseDatos"></param>
+	<param name="StrUsuario"></param>
+	<param name="StrPassword"></param>
+	<param name="NombreApp"></param>
+	<param name="Timeout"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Entorno.DiaHabil(System.DateTime)">
+	<summary>
+ Funcion para validar si una fecha en especifico es habil
+ </summary>
+	<param name="FechaValidar">La fecha a validar</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Entorno.DiaHabil(System.DateTime,System.String)">
+	<summary>
+ Funcion para validar si una fecha en especifico es habil
+ </summary>
+	<param name="FechaValidar">La fecha a validar</param>
+	<param name="Mercado">Mercado a validar</param>
+	<returns>Si la fecha es Habil o no</returns>
+	<remarks>La fecha debe ser un objeto de fecha valido (no importa la hora)</remarks>
+</member><member name="M:Entorno.DiaHabil(System.DateTime,System.String,System.String@)">
+	<summary>
+ Funcion para validar si una fecha en especifico es habil
+ </summary>
+	<param name="FechaValidar">La fecha a validar</param>
+	<param name="Mercado">Mercado a validar</param>
+	<returns>Si la fecha es Habil o no</returns>
+	<remarks>La fecha debe ser un objeto de fecha valido (no importa la hora)</remarks>
+</member><member name="M:Entorno.ObtenerConsecutivoTablaTemporal">
+	<summary>
+ Funcion para obtener el consecutivo de una tabla temporal
+ </summary>
+	<returns>Consecutivo</returns>
+	<remarks></remarks>
+</member><member name="M:Entorno.EjecutaSeguridad(System.String,System.String,System.String@,System.String@,System.String@)">
+	<summary>
+ Función para llamar el sp de validaciones de Seguridad en el acceso a la aplicación
+ </summary>
+	<param name="Origen"></param>
+	<param name="MsgErrorSeg"></param>
+	<param name="NumErrorSeg"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:My.Resources.Resources.ResourceManager">
+	<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member><member name="P:My.Resources.Resources.Culture">
+	<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member><member name="T:My.Resources.Resources">
+	<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member><member name="M:FuncionesGenericas`1.Update(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},`0,System.String,System.Data.SqlClient.SqlConnection,System.String@)">
+	<summary>
+ Funcion que crea y ejecuta un query de UPDATE en base a una lista de propiedades, un objeto y una lista de llaves
+ </summary>
+	<param name="ListaCamposActualizar">Lista de campos a actualizar</param>
+	<param name="ListaCamposLlave">Lista de llaves de la tabla </param>
+	<param name="objetoNuevo">El objeto de donde se van a extraer los datos</param>
+	<param name="Tabla">La tabla destino</param>
+	<param name="conexion">La conexion a utilizar</param>
+	<param name="excepcion">El objeto donde se va a depositar la excepcion, si es que la hay</param>
+	<returns>El numero de filas afectadas</returns>
+	<remarks>Si se manda una lista de valorse vacia o una lista de llaves vacia, se produce una excepcion, al no 
+ existir un query correctamente creado. EL objeto debe ser de tipo T</remarks>
+</member><member name="M:FuncionesGenericas`1.Insert(`0,System.String,System.String[],System.Boolean,System.Boolean,System.Data.SqlClient.SqlConnection,System.String@)">
+	<summary>
+ Funcion que crea un insert en base a un objeto de tipo T
+ </summary>
+	<param name="ObjetoInsertar">Objeto a insertar</param>
+	<param name="Tabla">Tabla utilizar</param>
+	<param name="camposOmitir">Campos a omitir en el insert</param>
+	<param name="ignoraNulos">Si el campo tiene un valor nulo, se ignora si este parametro en true</param>
+	<param name="convierteNulos">Si el campo es nulo, el valor que se le asigna es el default del tipo ('' para string y 0 para numericos)</param>
+	<param name="conexion">Conexion a utilizar</param>
+	<param name="excepcion">Variable donde se regresará la excepcion</param>
+	<returns>Numero de registros insertados</returns>
+	<remarks>El objeto debe ser de tipo T</remarks>
+</member><member name="M:FuncionesGenericas`1.Clonar(`0)">
+	<summary>
+ Funcion para clonar un objeto de tipo T que no implementa la funcion clone
+ </summary>
+	<param name="objeto">Objeto base</param>
+	<returns>Nuevo objeto clonado</returns>
+	<remarks></remarks>
+</member><member name="M:FuncionesGenericas.Select(System.String,System.Data.SqlClient.SqlConnection)">
+	<summary>
+ Crea un diccionario de llavevalor del resultado
+ </summary>
+	<param name="Query"></param>
+	<param name="conexion"></param>
+	<returns></returns>
+	<remarks>Solo para cuando se obtienen pares de valores y estos no se repiten</remarks>
+</member><member name="M:FuncionesGenericas.SelectUnElemento(System.String,System.Data.SqlClient.SqlConnection)">
+	<summary>
+ Crea un diccionario de llavevalor del resultado
+ </summary>
+	<param name="Query"></param>
+	<param name="conexion"></param>
+	<returns></returns>
+	<remarks>Solo para cuando se obtienen pares de valores y estos no se repiten</remarks>
+</member><member name="M:FuncionesGenericas.EjecutaEscalar(System.String,System.Data.SqlClient.SqlConnection)">
+	<summary>
+ Funcion para ejecutar un query que regresa un solo valor de tipo numerico
+ </summary>
+	<param name="query">query a ejecutar</param>
+	<param name="conexion">conexion a usar</param>
+	<returns>Entero con el dato regresado por el query</returns>
+	<remarks>Solo se usa cuando el query regresa un solo valor, ya que solo regresa el primer valor
+ de la primer columna</remarks>
+</member><member name="M:FuncionesGenericas.EjecutaEscalar(System.String,System.Data.SqlClient.SqlConnection,System.String)">
+	<summary>
+ Funcion para ejecutar un query que regresa un solo valor de tipo numerico
+ </summary>
+	<param name="query">query a ejecutar</param>
+	<param name="conexion">conexion a usar</param>
+	<param name="excepcion">excepciona usar</param>
+	<returns>Entero con el dato regresado por el query</returns>
+	<remarks>Solo se usa cuando el query regresa un solo valor, ya que solo regresa el primer valor
+ de la primer columna</remarks>
+</member><member name="M:FuncionesGenericas.SeleccionaStringIndividual(System.String,System.Data.SqlClient.SqlConnection)">
+	<summary>
+ Funcion para ejecutar un query que regresa un solo valor de tipo string
+ </summary>
+	<param name="query">query a ejecutar</param>
+	<param name="conexion">conexion a usar</param>
+	<returns>Entero con el dato regresado por el query</returns>
+	<remarks>Solo se usa cuando el query regresa un solo valor, ya que solo regresa el primer valor
+ de la primer columna</remarks>
+</member><member name="M:FuncionesGenericas.SeleccionaStringIndividual(System.String,System.Data.SqlClient.SqlConnection,System.String)">
+	<summary>
+ Funcion para ejecutar un query que regresa un solo valor de tipo string
+ </summary>
+	<param name="query">query a ejecutar</param>
+	<param name="conexion">conexion a usar</param>
+	<param name="excepcion">excepciona usar</param>
+	<returns>Entero con el dato regresado por el query</returns>
+	<remarks>Solo se usa cuando el query regresa un solo valor, ya que solo regresa el primer valor
+ de la primer columna</remarks>
+</member><member name="M:FuncionesGenericas.SelectLista(System.String,System.Data.SqlClient.SqlConnection,System.Boolean)">
+	<summary>
+ Crea una lista de strings del resultado
+ </summary>
+	<param name="Query">Query a ejecutar</param>
+	<param name="conexion">Conexion a usar</param>
+	<returns>Lasta de strings</returns>
+	<remarks>Solo para cuando se obtiene 1 cadena pro fila</remarks>
+</member>
+</members>
+</doc>
